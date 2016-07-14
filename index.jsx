@@ -7,7 +7,7 @@ var Person = function() {  // kind of like a Class
     var job = 'Male model';
     return (
         <div className="person">
-            <div className="person-name">{name}</div>  // kind of like #{var}
+            <div className="person-name">{name}</div>  // kind of like {"{var}"}
             <img className="person-img" src={imageUrl} />
             <div className="person-job">
                 {job}
