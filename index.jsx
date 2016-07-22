@@ -1,10 +1,10 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Person = function() {  // kind of like a Class
+var Person = function(props) {  // kind of like a Class
     var name = 'Derek Zoolander';   // attribute name
     var imageUrl = 'http://uifaces.com/assets/static/images/zoolander.jpg';
-    var job = 'Male model';
+    var job = 'Male model'; //
     return (
         <div className="person">
             <div className="person-name">{name}</div>  // kind of like {"{var}"}
@@ -16,27 +16,15 @@ var Person = function() {  // kind of like a Class
     );
 };
 
-var PersonList = function() {
-    return (
-        <div className="person-list">
-            <Person />
-            <Person />
-            <Person />
-            <Person />
-            <Person />
-        </div>
-    );
-};
-
 // statefull
 var PersonList = React.createClass({
     render: function() {
         var people = [];
         for (var i=0; i<5; i++) {
-            people.push(<Person />);
+            people.push(<Person key={i} /> );
         }
         return (
-            <div className="person-list">
+            <div className="person-list" >
                 {people}
             </div>
         );
